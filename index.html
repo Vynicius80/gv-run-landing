@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GV Run — Corra sem dor | Programa de prevenção para corredores</title>
 <meta name="description" content="Programa de 8 semanas de prevenção de lesões para corredores, criado por fisioterapeutas do esporte de alto rendimento. Corra sem dor.">
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preconnect" href="https://www.clarity.ms">
+<link rel="dns-prefetch" href="https://www.youtube.com">
 <style>
   :root{
     --navy:#0A1730; --navy2:#101F3C; --deep:#16305E; --blue:#2E6FDB; --sky:#57A0FF;
@@ -172,30 +175,6 @@
   }
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.btn:hover{transform:none}}
 </style>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1576907507479478');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1576907507479478&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ydmqfazbsw");
-</script>
 </head>
 <body>
 
@@ -444,11 +423,45 @@ src="https://www.facebook.com/tr?id=1576907507479478&ev=PageView&noscript=1"
     }
   })();
 
-  // vídeo do app (a caixa só aparece quando o link estiver preenchido)
+  // vídeo do app — só carrega quando o usuário rola até perto dele (não trava o carregamento inicial)
   (function(){
     const box=document.getElementById('videoBox'), fr=document.getElementById('appVideo');
-    if(box && fr && VIDEO_URL){ fr.src=VIDEO_URL; box.style.display='block'; }
+    if(box && fr && VIDEO_URL){
+      box.style.display='block';
+      new IntersectionObserver(function(es,o){
+        if(es[0].isIntersecting){ fr.src=VIDEO_URL; o.disconnect(); }
+      }, {rootMargin:'200px'}).observe(box);
+    }
   })();
 </script>
+
+<!-- Meta Pixel + Clarity — carregados após a página pintar, sem perder dados -->
+<script>
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    // Meta Pixel
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1576907507479478');
+    fbq('track', 'PageView');
+    // Microsoft Clarity
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ydmqfazbsw");
+  }, 2500);
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1576907507479478&ev=PageView&noscript=1"
+/></noscript>
+
 </body>
 </html>
