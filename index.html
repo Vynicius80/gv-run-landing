@@ -434,7 +434,7 @@ footer .links{display:flex;justify-content:center;gap:18px;margin:12px 0;flex-wr
   <div class="rhythm">
     <h3 style="font-size:1.7rem;margin-bottom:18px;text-align:center">O ritmo de cada semana</h3>
     <div class="grid g3">
-      <div class="card"><div class="ic"><svg class="i"><use href="#i-rotate"/></svg></div><h3>Todo dia</h3><p>Rotina curta de mobilidade e foot core, para o corpo entrar no ritmo.</p></div>
+      <div class="card"><div class="ic"><svg class="i"><use href="#i-rotate"/></svg></div><h3>Todo dia · 10 min</h3><p>Foot core primeiro, mobilidade depois — o que mais protege vem antes.</p></div>
       <div class="card"><div class="ic"><svg class="i"><use href="#i-cross"/></svg></div><h3>Controle</h3><p>Propriocepção e estabilizadores de tronco e quadril.</p></div>
       <div class="card"><div class="ic"><svg class="i"><use href="#i-dumbbell"/></svg></div><h3>Força</h3><p>Sessões de força que respeitam a sua carga de corrida.</p></div>
     </div>
@@ -658,16 +658,11 @@ const CONFIG = {
   vagasRestantes: 73,
 
   // Preços (mensal, em R$) e anual.
-  precos: { lote1: 9.90, lote2: 19.90, oficial: 29.90, anual: 249.90, anualLancamento: 99 },
+  precos: { lote1: 9.90, lote2: 19.90, oficial: 29.90, anual: 249, anualLancamento: 99 },
 
   // Links de compra da Hotmart, um por oferta. Enquanto estiver vazio, o botão apenas leva aos planos.
-  checkout: {
-  lote1: 'https://pay.hotmart.com/P107906075P?off=qixozya4&offDiscount=LOTE1',
-  lote2: 'https://pay.hotmart.com/P107906075P?off=qixozya4&offDiscount=LOTE2',
-  oficial: 'https://pay.hotmart.com/P107906075P?off=qixozya4',
-  anual: 'https://pay.hotmart.com/P107906075P?off=tlri2arb',
-  anualLancamento: 'https://pay.hotmart.com/P107906075P?off=tlri2arb&offDiscount=ANUAL100'
-},
+  checkout: { lote1: '', lote2: '', oficial: '', anual: '', anualLancamento: '' },
+
   // Depoimentos REAIS e autorizados. Enquanto a lista estiver vazia, a seção não aparece.
   // Exemplo: [{ nome: 'Nome', texto: 'Depoimento...' }]
   provaSocial: [],
