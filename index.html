@@ -658,11 +658,16 @@ const CONFIG = {
   vagasRestantes: 73,
 
   // Preços (mensal, em R$) e anual.
-  precos: { lote1: 9.90, lote2: 19.90, oficial: 29.90, anual: 249, anualLancamento: 99 },
+  precos: { lote1: 9.90, lote2: 19.90, oficial: 29.90, anual: 249.90, anualLancamento: 99 },
 
   // Links de compra da Hotmart, um por oferta. Enquanto estiver vazio, o botão apenas leva aos planos.
-  checkout: { lote1: '', lote2: '', oficial: '', anual: '', anualLancamento: '' },
-
+     checkout: {
+      lote1: 'https://pay.hotmart.com/P107906075P?off=qixozya4&offDiscount=LOTE1',
+      lote2: 'https://pay.hotmart.com/P107906075P?off=qixozya4&offDiscount=LOTE2',
+      oficial: 'https://pay.hotmart.com/P107906075P?off=qixozya4',
+      anual: 'https://pay.hotmart.com/P107906075P?off=tlri2arb',
+      anualLancamento: 'https://pay.hotmart.com/P107906075P?off=tlri2arb&offDiscount=ANUAL100'
+    },
   // Depoimentos REAIS e autorizados. Enquanto a lista estiver vazia, a seção não aparece.
   // Exemplo: [{ nome: 'Nome', texto: 'Depoimento...' }]
   provaSocial: [],
